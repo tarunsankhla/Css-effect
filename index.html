@@ -1,0 +1,90 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button{
+    text-align: center;
+    width: 80%;
+    padding: 1rem;
+    margin: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: bisque;
+    text-shadow: blue;
+    border-radius: 5%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:focus {
+    outline: 0;
+  }
+
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  body {
+    background-color: black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .img-box {
+    height: 100%;
+    position: relative;
+    width:60%;
+  }
+
+  .img-box img:nth-child(1) {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    transform-origin: left;
+    transition: filter 3s ease,
+                opacity 3s ease,
+                transform 3s ease;
+    width: 100%;
+  }
+  .img-box img:nth-child(2) {
+    height: 400px;
+    transform: translateX(400px) scaleX(0);
+    transform-origin: left;
+    transition: transform 3s ease;
+    width: 1200px;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="img-box">
+        <img class="gun" id="gun" src="gun.jpg" alt="gun">
+        <img class="noise" id="noise" src="noise.png" >
+      </div>  
+      <div>
+        <button id="button-disperse" title="disperse">Click to Disperse</button>
+      </div>
+    </div>
+    <audio id="audio" src="./sound.mp3"></audio>
+
+    <script src="./script.js"></script>
+
+  </body>
+</html>
